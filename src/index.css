@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.custom-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.next-arrow-1 {
+    right: -18px;
+    top: 36%;
+    transform: translateY(-50%);
+}
+
+.next-arrow-2 {
+    right: -18px;
+    top: 32%;
+    transform: translateY(-50%);
+}
+
+
+.prev-arrow-1 {
+    left: -18px;
+    top: 36%;
+    transform: translateY(-50%);
+}
+
+.prev-arrow-2 {
+    left: -18px;
+    top: 32%;
+    transform: translateY(-50%);
+}
+
+.custom-arrow:hover {
+    background-color: rgb(28, 27, 27);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.custom-loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #000000;    border-radius: 50%;
+    width: 50px;    
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
